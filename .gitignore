@@ -103,3 +103,4 @@ ENV/
 datasets_human_judgements/
 *.bin.gz
 /text8
+glove.840B.300d.txt
