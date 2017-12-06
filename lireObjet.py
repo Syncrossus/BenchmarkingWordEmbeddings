@@ -1,5 +1,6 @@
 import pickle
 
+
 def read(file):
     with open(file, 'rb') as fichier:
         mon_depickler = pickle.Unpickler(fichier)
