@@ -8,3 +8,6 @@ MC_CSV = 'datasets_human_judgements/mc.csv'
 MTURK = 'datasets_human_judgements/MTURK-771.csv'
 REL122 = 'datasets_human_judgements/rel122-norms.csv'
 RG = 'datasets_human_judgements/rg.csv'
+
+UMNSRS_REL = 'datasets_human_judgements/UMNSRS_relatedness.csv'
+UMNSRS_SIM = 'datasets_human_judgements/UMNSRS_similarity.csv'
