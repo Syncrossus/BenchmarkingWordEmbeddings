@@ -1,13 +1,16 @@
-COS_BRM_XLS = 'datasets_human_judgements/cos_matrix_brm_IFR.xlsx'
+RAW_CSV_DIR = "datasets_human_judgements/"
+NEW_CSV_DIR = "datasets_human_judgements_exploitable/"
+
+COS_BRM_XLS = 'cos_matrix_brm_IFR.xlsx'
 COS_BRM_MAT = 'matriceCosBrm'
 
-SIMLEX = 'datasets_human_judgements/SimLex-999/SimLex-999.txt'
+SIMLEX = 'SimLex-999/SimLex-999.txt'
 
 WORDSIM = 'wordsim.csv'
-MC_CSV = 'datasets_human_judgements/mc.csv'
-MTURK = 'datasets_human_judgements/MTURK-771.csv'
-REL122 = 'datasets_human_judgements/rel122-norms.csv'
-RG = 'datasets_human_judgements/rg.csv'
+MC_CSV = 'mc.csv'
+MTURK = 'MTURK-771.csv'
+REL122 = 'rel122-norms.csv'
+RG = 'rg.csv'
 
-UMNSRS_REL = 'datasets_human_judgements/UMNSRS_relatedness.csv'
-UMNSRS_SIM = 'datasets_human_judgements/UMNSRS_similarity.csv'
+UMNSRS_REL = 'UMNSRS_relatedness.csv'
+UMNSRS_SIM = 'UMNSRS_similarity.csv'
