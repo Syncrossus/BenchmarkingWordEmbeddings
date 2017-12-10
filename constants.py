@@ -14,3 +14,5 @@ RG = 'rg.csv'
 
 UMNSRS_REL = 'UMNSRS_relatedness.csv'
 UMNSRS_SIM = 'UMNSRS_similarity.csv'
+
+COS_BRM_CSV= 'cos_matrix_brm_IFR.csv'
