@@ -48,13 +48,15 @@ with open(NEW_CSV_DIR + "relatedness.csv", 'w', newline='') as writefile:
     writer = csv.writer(writefile)
     writer.writerows(relatedness_pairs)
 
-"""
-, UMNSRS_REL, UMNSRS_SIM
-, ',', ','
-, (2, 3, 0), (2, 3, 0)
-, (), ()
-, True, True
-"""
+
+for file in [UMNSRS_REL, UMNSRS_SIM]:
+    with open(RAW_CSV_DIR + file, 'rt') as readfile:
+        reader = csv.reader(readfile, delimiter=',')
+        next(reader)
+        file_formatted = [[row[2], row[3], float(row[0])] for row in reader if any(row)]
+    with open(NEW_CSV_DIR + file, 'w', newline='') as writefile:
+        writer = csv.writer(writefile)
+        writer.writerows(file_formatted)
 
 
 matriceCosBrm = read('matriceCosBrm')
