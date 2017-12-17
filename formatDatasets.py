@@ -1,10 +1,12 @@
 import csv
 import numpy as np
+import os
 
 from constants import *
 from lireObjet import read
 
 
+ 
 def is_synonymy_file(filename):
     if filename in [MC_CSV, RG, SIMLEX]:
         return True
@@ -37,6 +39,10 @@ for i in range(len(files)):
             synonymy_pairs += file_formatted
         else:
             relatedness_pairs += file_formatted
+
+#Création du fichier s'il n'existe pas
+if not os.path.exists(NEW_CSV_DIR):    
+    os.mkdir(NEW_CSV_DIR)
 
 # writing synonymy pairs to file
 with open(NEW_CSV_DIR + "synonymy.csv", 'w', newline='') as writefile:
