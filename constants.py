@@ -15,4 +15,13 @@ RG = 'rg.csv'
 UMNSRS_REL = 'UMNSRS_relatedness.csv'
 UMNSRS_SIM = 'UMNSRS_similarity.csv'
 
-COS_BRM_CSV= 'cos_matrix_brm_IFR.csv'
+COS_BRM_CSV = 'cos_matrix_brm_IFR.csv'
+
+SYNONYMY = 'synonymy.csv'
+RELATEDNESS = "relatedness.csv"
+
+GOOGLE_QST = "google_questions-words.txt"
+
+GOOGLE_NEWS = 'GoogleNews-vectors-negative300.bin'
+TEXT8 = "text8"
+GLOVE = "glove.840B.300d.txt"
