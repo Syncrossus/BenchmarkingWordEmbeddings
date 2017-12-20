@@ -26,9 +26,9 @@ def main(args):
         print(model, ':')
         for dataset in datasets:
             if dataset != GOOGLE_QST:
-                print(dataset, ':', model.wv.evaluate_word_pairs(pairs=dataset, delimiter=',', case_insensitive=True))
+                print(dataset, ':', model.wv.evaluate_word_pairs(pairs=NEW_CSV_DIR + dataset, delimiter=',', case_insensitive=True))
             else:
-                print(dataset, ':', model.wv.accuracy(dataset))
+                print(dataset, ':', model.wv.accuracy(RAW_CSV_DIR + dataset))
 
 
 if __name__ == '__main__':

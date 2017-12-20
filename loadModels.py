@@ -1,10 +1,9 @@
 from gensim.models.keyedvectors import KeyedVectors
 from constants import *
 
-# Load Google's pre-trained Word2Vec model.
-
 
 def load_google_news():
+    # Load Google's pre-trained Word2Vec model.
     return KeyedVectors.load_word2vec_format(GOOGLE_NEWS, binary=True)
 
 
