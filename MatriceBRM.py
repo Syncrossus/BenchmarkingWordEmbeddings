@@ -6,7 +6,7 @@ from constants import *
 def importMatrixBRM():
     matriceBRM = np.zeros((541, 541))
 
-    classeur = xlrd.open_workbook(COS_BRM_XLS)
+    classeur = xlrd.open_workbook(RAW_CSV_DIR + COS_BRM_XLS)
 
     nom_des_feuilles = classeur.sheet_names()
     numeroColonne = [0, 200, 400]

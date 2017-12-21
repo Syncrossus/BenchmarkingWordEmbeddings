@@ -1,5 +1,6 @@
 from gensim.models.keyedvectors import KeyedVectors
 from constants import *
+from gensim.models import word2vec
 
 
 def load_google_news():
