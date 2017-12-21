@@ -21,9 +21,9 @@ def main(args):
         models = all_models
         datasets = all_datasets
 
-    for model in models:
-        model = load(model)
-        print(model, ':')
+    for modelname in models:
+        model = load(modelname)
+        print(modelname, ':')
         for dataset in datasets:
             if dataset != GOOGLE_QST:
                 print(dataset, ':', model.wv.evaluate_word_pairs(pairs=NEW_CSV_DIR + dataset, delimiter=',', case_insensitive=True))
