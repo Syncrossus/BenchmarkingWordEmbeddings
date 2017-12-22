@@ -14,10 +14,13 @@ def main(args):
     if args is not None:
         models = [model for model in all_models if model in args]
         datasets = [dataset for dataset in all_datasets if dataset in args]
-        if models == [] or datasets == []:
-            print("Missing embeddings or datasets arguments, proceeding with all embeddings and datasets")
+        if models == []:
+            print("Missing model argument(s), proceeding with all embeddings")
             models = all_models
+        if datasets == []:
+            print("Missing dataset argument(s), proceeding with all datasets")
             datasets = all_datasets
+
     else:
         models = all_models
         datasets = all_datasets
