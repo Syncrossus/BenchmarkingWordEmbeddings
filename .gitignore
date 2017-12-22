@@ -103,3 +103,4 @@ ENV/
 *.bin.gz
 /text8
 glove.840B.300d.txt
+datasets_human_judgements_exploitable/
