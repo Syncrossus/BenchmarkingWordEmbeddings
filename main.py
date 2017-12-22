@@ -1,5 +1,6 @@
 import sys
 import os
+import gc
 from constants import *
 from loadModels import *
 
@@ -23,6 +24,7 @@ def main(args):
 
     for modelname in models:
         model = load(modelname)
+        gc.collect()  # collecting previous model
         print(modelname, ':')
         for dataset in datasets:
             if dataset != GOOGLE_QST:
