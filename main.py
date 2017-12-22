@@ -28,9 +28,14 @@ def main(args):
         print(modelname, ':')
         for dataset in datasets:
             if dataset != GOOGLE_QST:
-                print(dataset, ':', model.wv.evaluate_word_pairs(pairs=NEW_CSV_DIR + dataset, delimiter=',', case_insensitive=True))
+                correlation = model.wv.evaluate_word_pairs(pairs=NEW_CSV_DIR + dataset, delimiter=',', case_insensitive=True)
+                avgCorrelation = (correlation[0][0] + correlation[1][0]) / 2
+                print("   ", dataset, ':', avgCorrelation, "correlation between model and human evaluation")
             else:
-                print(dataset, ':', model.wv.accuracy(RAW_CSV_DIR + dataset))
+                accuracy = model.wv.accuracy(RAW_CSV_DIR + dataset)
+                sum_correct = len(accuracy[-1]['correct'])
+                total = sum_correct + len(accuracy[-1]['incorrect'])
+                print("   ", dataset, ':', sum_correct / total * 100, "% correct")
 
 
 if __name__ == '__main__':
