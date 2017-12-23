@@ -6,28 +6,28 @@ from loadModels import *
 
 
 def main(args):
-    if not os.path.isdir(NEW_CSV_DIR):
+    if not os.path.isdir(NEW_CSV_DIR):  # if the directory with formatted datasets does not exist
         import formatDatasets
-        formatDatasets.main()
+        formatDatasets.main()  # format datasets (creates the directory)
     all_models = [TEXT8, GOOGLE_NEWS, GLOVE]
     all_datasets = [RELATEDNESS, SYNONYMY, UMNSRS_REL, UMNSRS_SIM, COS_BRM_CSV, GOOGLE_QST]
-    if args is not None:
-        models = [model for model in all_models if model in args]
-        datasets = [dataset for dataset in all_datasets if dataset in args]
-        if models == []:
+    if args is not None:  # if arguments were passed in the command line
+        models = [model for model in all_models if model in args]  # models to benchmark are the models included in the arguments
+        datasets = [dataset for dataset in all_datasets if dataset in args]  # datasets to use in the benchmark are the datasets included in the arguments
+        if models == []:  # if no models were included in args
             print("Missing model argument(s), proceeding with all embeddings")
             models = all_models
-        if datasets == []:
+        if datasets == []:  # if no datasets were included in args
             print("Missing dataset argument(s), proceeding with all datasets")
             datasets = all_datasets
 
-    else:
+    else:  # no arguments were passed
         models = all_models
         datasets = all_datasets
 
     for modelname in models:
-        model = load(modelname)
-        gc.collect()  # collecting previous model
+        model = load(modelname)  # loading each model
+        gc.collect()  # forcing collection of previous model to decrease memory used
         print(modelname, ':')
         for dataset in datasets:
             if dataset != GOOGLE_QST:
